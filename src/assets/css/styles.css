@@ -1,0 +1,10 @@
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* 🚨 This is why we are using `@apply` for every CSS property 🚨*/
+/* Note that classes are applied based on their location in your original CSS, not based on the order you list them after the @apply directive. */
+/* If you want fine-grained control over the order in which classes are applied, use multiple @apply statements: */
