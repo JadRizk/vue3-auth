@@ -1,19 +1,24 @@
 import { createApp } from 'vue'
-import { VuelidatePlugin } from '@vuelidate/core';
-import Toast, { POSITION, PluginOptions } from "vue-toastification";
+import { VuelidatePlugin } from '@vuelidate/core'
+import Toast, { POSITION, PluginOptions } from 'vue-toastification'
 
 import App from './App.vue'
 import router from './router'
 import { store } from './store'
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faChevronDown, faLock, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import {
+  faChevronDown,
+  faLock,
+  faUser,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Tailwind Config
 import './assets/css/styles.css'
 // vue-toastification
-import "vue-toastification/dist/index.css";
+import 'vue-toastification/dist/index.css'
 
 // Icons imports
 library.add(faChevronDown)
@@ -27,25 +32,21 @@ dom.watch()
 
 // Setup our toast configuations
 const toastOptions: PluginOptions = {
-    // Setting the global default position
-    position: POSITION.TOP_RIGHT,
-    transition: "Vue-Toastification__bounce",
-    maxToasts: 3,
-    newestOnTop: true,
-    timeout: 3000
+  // Setting the global default position
+  position: POSITION.TOP_RIGHT,
+  transition: 'Vue-Toastification__bounce',
+  maxToasts: 3,
+  newestOnTop: true,
+  timeout: 3000,
 }
 
-
-const app = createApp(App);
+const app = createApp(App)
 
 app.use(store)
 app.use(router)
 app.use(VuelidatePlugin)
-app.use(Toast, toastOptions);
-
-
+app.use(Toast, toastOptions)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
-
 
 app.mount('#app')

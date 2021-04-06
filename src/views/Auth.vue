@@ -10,75 +10,75 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { RegisterForm } from "components/organisms";
-import { LoginForm } from "components/organisms";
-import { Panels } from "components/molecules";
-import { RegisterUserInfo } from "store/auth.module";
-import { ActionTypes, useStore } from "store";
+<script lang="ts">
+import { RegisterForm } from 'components/organisms'
+import { LoginForm } from 'components/organisms'
+import { Panels } from 'components/molecules'
+import { RegisterUserInfo } from 'store/auth.module'
+import { ActionTypes, useStore } from 'store'
 
-import { computed, ref } from "vue";
-import { useToast } from "vue-toastification";
-import { useRouter } from "vue-router";
+import { computed, ref } from 'vue'
+import { useToast } from 'vue-toastification'
+import { useRouter } from 'vue-router'
 
 export default {
   components: { RegisterForm, LoginForm, Panels },
   setup() {
-    const signUpMode = ref(false);
-    const store = useStore();
-    const toast = useToast();
-    const { push } = useRouter();
+    const signUpMode = ref(false)
+    const store = useStore()
+    const toast = useToast()
+    const { push } = useRouter()
 
-    const onRedirect = () => (signUpMode.value = !signUpMode.value);
+    const onRedirect = () => (signUpMode.value = !signUpMode.value)
 
     const handleOnRegister = async (userDetails: RegisterUserInfo) => {
       // console.log("registered", userDetails);
       await store
         .dispatch(ActionTypes.REGISTER, userDetails)
         .then((data: { email: string } | string) => {
-          if (typeof data !== "string") {
+          if (typeof data !== 'string') {
             // Redirect user to Login view
-            onRedirect();
+            onRedirect()
           }
         })
         .catch((errorMsg: string) => {
-          toast.error(errorMsg);
-        });
-    };
+          toast.error(errorMsg)
+        })
+    }
 
     const handleOnLogin = async (userDetail: {
-      username: string;
-      password: string;
+      username: string
+      password: string
     }) => {
-      const { username, password } = userDetail;
+      const { username, password } = userDetail
 
       await store
         .dispatch(ActionTypes.LOGIN, { username, password })
         .then((data: { email: string } | string) => {
-          if (typeof data !== "string") {
+          if (typeof data !== 'string') {
             // Redirect user to Dashboard page
-            push({ name: "Home" });
+            push({ name: 'Home' })
           }
         })
         .catch((errorMsg: string) => {
-          toast.error(errorMsg);
-        });
-    };
+          toast.error(errorMsg)
+        })
+    }
 
     const containerClassName = computed(() => {
       return {
-        "sign-up-mode": signUpMode.value,
-      };
-    });
+        'sign-up-mode': signUpMode.value,
+      }
+    })
 
     return {
       onRedirect,
       containerClassName,
       handleOnRegister,
       handleOnLogin,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
@@ -93,7 +93,7 @@ export default {
 }
 
 .container:before {
-  content: "";
+  content: '';
   position: absolute;
   height: 2000px;
   width: 2000px;

@@ -72,35 +72,35 @@
 // Todo [+]: Add a css class
 // Todo [+]: Map the nav entries from the route file
 
-import { computed } from "vue";
-import { useRouter, RouteRecordRaw } from "vue-router";
+import { computed } from 'vue'
+import { useRouter, RouteRecordRaw } from 'vue-router'
 
-import BaseButton from "components/atoms/BaseButton.atom.vue";
-import { routes } from "../router";
-import { useStore, ActionTypes } from "store";
+import BaseButton from 'components/atoms/BaseButton.atom.vue'
+import { routes } from '../router'
+import { useStore, ActionTypes } from 'store'
 
 export default {
   components: {
     BaseButton,
   },
   setup() {
-    const store = useStore();
-    const { push } = useRouter();
+    const store = useStore()
+    const { push } = useRouter()
 
-    const isLoggedIn = computed(() => store.getters.isUserLoggedIn);
+    const isLoggedIn = computed(() => store.getters.isUserLoggedIn)
 
-    const handleOnRegister = () => push("/auth/register");
+    const handleOnRegister = () => push('/auth/register')
 
-    const handleOnLogin = () => push("/auth/login");
+    const handleOnLogin = () => push('/auth/login')
 
     const handleOnLogout = async () => {
-      await store.dispatch(ActionTypes.LOGOUT, undefined);
-    };
+      await store.dispatch(ActionTypes.LOGOUT, undefined)
+    }
 
     const navItems = routes.filter((route: RouteRecordRaw) => {
-      const { name, component } = route;
-      return name && component;
-    });
+      const { name, component } = route
+      return name && component
+    })
 
     return {
       handleOnLogin,
@@ -108,9 +108,9 @@ export default {
       handleOnLogout,
       navItems,
       isLoggedIn,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped></style>
