@@ -13,6 +13,14 @@ import {
   faUser,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons'
+
+import {
+  faFacebook,
+  faTwitter,
+  faGoogle,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Tailwind Config
@@ -25,6 +33,10 @@ library.add(faChevronDown)
 library.add(faLock)
 library.add(faUser)
 library.add(faEnvelope)
+library.add(faFacebook)
+library.add(faTwitter)
+library.add(faGoogle)
+library.add(faLinkedin)
 
 // This will kick of the initial replacement of i to svg tags and configure a MutationObserver
 // Replace <i> by <svg> using the browser API

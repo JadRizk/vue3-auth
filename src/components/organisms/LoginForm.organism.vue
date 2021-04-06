@@ -28,22 +28,21 @@
     />
 
     <base-button type="primary-contained">Login</base-button>
-    <!-- 
     <p class="social-text">Or Sign in with social platforms</p>
     <div class="social-media">
       <a href="#" class="social-icon">
-        <i class="fab fa-facebook-f"></i>
+        <font-awesome-icon :icon="['fab', 'facebook']" />
       </a>
       <a href="#" class="social-icon">
-        <i class="fab fa-twitter"></i>
+        <font-awesome-icon :icon="['fab', 'twitter']" />
       </a>
       <a href="#" class="social-icon">
-        <i class="fab fa-google"></i>
+        <font-awesome-icon :icon="['fab', 'google']" />
       </a>
       <a href="#" class="social-icon">
-        <i class="fab fa-linkedin-in"></i>
+        <font-awesome-icon :icon="['fab', 'linkedin']" />
       </a>
-    </div> -->
+    </div>
   </form>
 </template>
 
