@@ -46,32 +46,32 @@
   </form>
 </template>
 
-<script lang='ts'>
-import { SetupContext } from "vue";
+<script lang="ts">
+import { SetupContext } from 'vue'
 
-import { BaseButton, BaseText } from "components/atoms";
-import { InputField } from "components/molecules";
+import { BaseButton, BaseText } from 'components/atoms'
+import { InputField } from 'components/molecules'
 
-import { useLoginForm } from "composables/useLoginForm";
+import { useLoginForm } from 'composables/useLoginForm'
 
 export default {
-  name: "LoginForm",
+  name: 'LoginForm',
   components: { BaseButton, InputField, BaseText },
   setup(props: {}, { emit }: SetupContext) {
-    const { userEmail, userPassword, v, handleBlur } = useLoginForm();
+    const { userEmail, userPassword, v, handleBlur } = useLoginForm()
 
     const handleOnSubmit = () => {
-      v.value.$touch();
+      v.value.$touch()
 
       if (!v.value.userEmail.$error && !v.value.userPassword.$error) {
-        emit("on-login-submit", {
+        emit('on-login-submit', {
           username: userEmail.value,
           password: userPassword.value,
-        });
-        return;
+        })
+        return
       }
-      console.log("Rejected");
-    };
+      console.log('Rejected')
+    }
 
     return {
       userEmail,
@@ -79,10 +79,10 @@ export default {
       v,
       handleBlur,
       handleOnSubmit,
-    };
+    }
   },
-  emits: ["on-login-submit"],
-};
+  emits: ['on-login-submit'],
+}
 </script>
 
 <style scoped>

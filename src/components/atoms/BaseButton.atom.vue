@@ -10,33 +10,33 @@
 
 <script lang="ts">
 // Imports
-import { SetupContext } from "vue";
+import { SetupContext } from 'vue'
 
 // Types
 interface Props {
-  type?: TBtnType;
-  variantColor?: TvariantColor;
-  isDisabled?: boolean;
-  value?: string;
-  size?: TbtnSize;
+  type?: TBtnType
+  variantColor?: TvariantColor
+  isDisabled?: boolean
+  value?: string
+  size?: TbtnSize
 }
 
-type TBtnType = "primary-outlined" | "primary-contained" | "transparent";
+type TBtnType = 'primary-outlined' | 'primary-contained' | 'transparent'
 
-type TvariantColor = "primary" | "secondary";
-type TbtnSize = "sm" | "md" | "lg";
+type TvariantColor = 'primary' | 'secondary'
+type TbtnSize = 'sm' | 'md' | 'lg'
 
 // @component
 export default {
-  name: "BaseButton",
+  name: 'BaseButton',
   props: {
     type: {
       type: String as () => TBtnType,
-      default: "button",
+      default: 'button',
     },
     variantColor: {
       type: String as () => TvariantColor,
-      default: "primary",
+      default: 'primary',
     },
     isDisabled: {
       type: Boolean,
@@ -44,19 +44,19 @@ export default {
     },
     size: {
       type: String as () => TbtnSize,
-      default: "md",
+      default: 'md',
     },
   },
 
   setup(props: Props, { emit }: SetupContext) {
     const onClick = () => {
-      emit("on-click");
-    };
+      emit('on-click')
+    }
 
-    return { onClick };
+    return { onClick }
   },
-  emits: ["on-click"],
-};
+  emits: ['on-click'],
+}
 </script>
 <style scoped>
 button {
@@ -71,13 +71,13 @@ button {
   outline: 0;
 }
 
-button[type|="primary"] {
+button[type|='primary'] {
   @apply rounded-lg;
   @apply text-white;
   @apply uppercase;
 }
 
-button[type="primary-outlined"] {
+button[type='primary-outlined'] {
   @apply border-2;
   @apply border-primary-500;
   @apply text-primary-500;
@@ -85,12 +85,12 @@ button[type="primary-outlined"] {
   background-color: transparent;
 }
 
-button[type="primary-contained"] {
+button[type='primary-contained'] {
   @apply text-white;
   @apply bg-primary-500;
 }
 
-button[type="primary-transparent"] {
+button[type='primary-transparent'] {
   @apply text-dark-900;
   @apply border-2;
   @apply border-dark-900;

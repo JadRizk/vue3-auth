@@ -4,35 +4,26 @@
   </component>
 </template>
 
-<script lang='ts'>
-import { computed, defineComponent } from "vue";
+<script lang="ts">
+import { computed, defineComponent } from 'vue'
 
 interface Props {
-  tag: tagTypes;
-  content: string;
-  for?: string;
+  tag: tagTypes
+  content: string
+  for?: string
 }
 
-type tagTypes =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6"
-  | "p"
-  | "span"
-  | "label";
+type tagTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'label'
 
-const _tagTypes = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span", "label"];
+const _tagTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label']
 
 export default defineComponent({
-  name: "BaseText",
+  name: 'BaseText',
   props: {
     tag: {
       type: String,
       required: true,
-      default: "span",
+      default: 'span',
       validator: (value: string) => _tagTypes.includes(value),
     },
     content: {
@@ -46,18 +37,18 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const forProp = computed(() => (props.tag === "label" ? props.for : null));
+    const forProp = computed(() => (props.tag === 'label' ? props.for : null))
     const textClasses = computed(() => {
       return {
-        "mb-2 font-bold text-lg text-grey-darkest": props.tag === "label",
-      };
-    });
+        'mb-2 font-bold text-lg text-grey-darkest': props.tag === 'label',
+      }
+    })
     return {
       forProp,
       textClasses,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped>
@@ -72,7 +63,7 @@ h6 {
   color: #191919;
   margin-bottom: 0px;
   text-transform: uppercase;
-  font-family: "Monofett", sans-serif;
+  font-family: 'Monofett', sans-serif;
 }
 
 h1 {
