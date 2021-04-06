@@ -20,13 +20,13 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent } from 'vue'
 
-import { BaseInput, BaseIcon } from "components/atoms";
+import { BaseInput, BaseIcon } from 'components/atoms'
 
 export default defineComponent({
-  name: "InputField",
+  name: 'InputField',
   components: { BaseInput, BaseIcon },
   props: {
     id: {
@@ -71,15 +71,15 @@ export default defineComponent({
     },
   },
   setup(props, { emit }) {
-    const handleOnBlur = () => emit("on-blur");
+    const handleOnBlur = () => emit('on-blur')
 
     return {
       handleOnBlur,
       emit,
-    };
+    }
   },
-  emits: ["on-blur", "update:modelValue"],
-});
+  emits: ['on-blur', 'update:modelValue'],
+})
 </script>
 
 <style scoped>

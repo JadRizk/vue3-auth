@@ -29,20 +29,20 @@
   </div>
 </template>
 
-<script lang='ts'>
-import { SetupContext } from "vue";
-import { BaseButton, BaseText } from "components/atoms";
+<script lang="ts">
+import { SetupContext } from 'vue'
+import { BaseButton, BaseText } from 'components/atoms'
 
 export default {
   components: { BaseButton, BaseText },
   setup(props: {}, { emit }: SetupContext) {
     const handleOnRedirect = () => {
-      emit("on-redirect");
-    };
-    return { handleOnRedirect };
+      emit('on-redirect')
+    }
+    return { handleOnRedirect }
   },
-  emits: ["on-redirect"],
-};
+  emits: ['on-redirect'],
+}
 </script>
 
 <style scoped>

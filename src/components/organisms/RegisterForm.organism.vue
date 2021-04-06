@@ -58,20 +58,20 @@
 </template>
 
 <script lang="ts">
-import { RegisterUserInfo } from "store/auth.module";
+import { RegisterUserInfo } from 'store/auth.module'
 
 /* eslint-disable @typescript-eslint/camelcase */
-import { BaseButton, BaseText } from "components/atoms";
-import { InputField } from "components/molecules";
-import { useRegisterForm } from "composables/useRegisterForm";
-import { useEmitter } from "hooks/useEmitter";
+import { BaseButton, BaseText } from 'components/atoms'
+import { InputField } from 'components/molecules'
+import { useRegisterForm } from 'composables/useRegisterForm'
+import { useEmitter } from 'hooks/useEmitter'
 
 interface Events {
-  "on-register-submit": RegisterUserInfo;
+  'on-register-submit': RegisterUserInfo
 }
 
 export default {
-  name: "RegisterForm",
+  name: 'RegisterForm',
   components: { BaseButton, BaseText, InputField },
   setup() {
     // Import everything we need from the registration composable
@@ -81,27 +81,27 @@ export default {
       userPassword,
       v,
       handleBlur,
-    } = useRegisterForm();
+    } = useRegisterForm()
 
-    const emitter = useEmitter<Events>();
+    const emitter = useEmitter<Events>()
 
     const handleOnSubmit = () => {
       // Validate the inputs
-      v.value.$touch();
+      v.value.$touch()
 
       // Make sure that all the inputs are valide before procceding
       if (!v.value.$invalid) {
         // Emit and event with the registration user obj
-        emitter("on-register-submit", {
+        emitter('on-register-submit', {
           email: userEmail.value,
           username: userName.value,
           password: userPassword.value,
-        });
-        return;
+        })
+        return
       }
       // Todo: call a toaster
-      console.log("Rejected");
-    };
+      console.log('Rejected')
+    }
 
     return {
       userEmail,
@@ -110,10 +110,10 @@ export default {
       v,
       handleBlur,
       handleOnSubmit,
-    };
+    }
   },
-  emits: ["on-register-submit"],
-};
+  emits: ['on-register-submit'],
+}
 </script>
 
 <style scoped>
