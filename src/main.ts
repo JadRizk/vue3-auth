@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { VuelidatePlugin } from '@vuelidate/core'
 import Toast, { POSITION, PluginOptions } from 'vue-toastification'
 
 import App from './App.vue'
@@ -56,7 +55,6 @@ const app = createApp(App)
 
 app.use(store)
 app.use(router)
-app.use(VuelidatePlugin)
 app.use(Toast, toastOptions)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
