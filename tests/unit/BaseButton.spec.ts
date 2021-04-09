@@ -10,9 +10,12 @@ describe('BaseInput', () => {
   })
 
   it('should have class btn-sm if size sm passed', async () => {
-    const wrapper = mount(BaseButton, { props: { size: 'sm' } })
+    const wrapper = mount(BaseButton, {
+      props: { size: 'sm', isDisabled: false },
+    })
     const button = wrapper.find('button')
     expect(button.classes()).toContain('btn-sm')
+    expect(button.attributes('disabled')).toBe(undefined)
   })
 
   it('button should be disabled if prop is true', async () => {
