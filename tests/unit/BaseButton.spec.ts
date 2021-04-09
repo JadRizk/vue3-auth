@@ -8,4 +8,18 @@ describe('BaseInput', () => {
     await button.trigger('click')
     expect(wrapper.emitted('on-click')).toBeTruthy()
   })
+
+  it('should have class btn-sm if size sm passed', async () => {
+    const wrapper = mount(BaseButton, { props: { size: 'sm' } })
+    const button = wrapper.find('button')
+    expect(button.classes()).toContain('btn-sm')
+  })
+
+  it('button should be disabled if prop is true', async () => {
+    const wrapper = mount(BaseButton, { props: { isDisabled: true } })
+    const button = wrapper.find('button')
+    await button.trigger('click')
+    expect(wrapper.emitted('on-click')).toBeFalsy()
+    expect(button.attributes('disabled')).toBe('')
+  })
 })
