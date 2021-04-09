@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import BaseInput from '@/components/atoms/BaseInput.atom.vue'
 
 describe('BaseInput', () => {
@@ -6,7 +6,7 @@ describe('BaseInput', () => {
   const name = 'GhenghisKhan'
 
   it('should emit a value', async () => {
-    const wrapper = mount(BaseInput, {
+    const wrapper = shallowMount(BaseInput, {
       props: { id, name },
     })
     wrapper.vm.$emit('update:modelValue', '123')
@@ -17,7 +17,7 @@ describe('BaseInput', () => {
   })
 
   it('emits on-blur when on blur', async () => {
-    const wrapper = mount(BaseInput, {
+    const wrapper = shallowMount(BaseInput, {
       props: { id, name },
     })
 
