@@ -11,6 +11,7 @@ module.exports = {
         store: require('path').resolve(__dirname, 'src/store'),
         utils: require('path').resolve(__dirname, 'src/utils'),
         views: require('path').resolve(__dirname, 'src/views'),
+        helpers: require('path').resolve(__dirname, 'src/helpers'),
       },
     },
   },

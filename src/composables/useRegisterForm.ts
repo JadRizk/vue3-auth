@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import useVuelidate from '@vuelidate/core'
-import rules from '../helpers/validation/rules'
+import rules from 'helpers/validation/rules'
 
 type inputNames = 'userEmail' | 'userName' | 'userPassword'
 
