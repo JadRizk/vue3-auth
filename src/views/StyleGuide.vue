@@ -1,6 +1,6 @@
 <template>
   <div class="settings">
-    <BaseText tag="h1" content="Settings" />
+    <BaseText tag="h1" content="StyleGuide" />
     <BaseText
       tag="p"
       content="A place to showcase all of the apps components"
@@ -35,7 +35,7 @@ import { defineComponent } from 'vue'
 import { BaseText, BaseButton } from 'components/atoms'
 
 export default defineComponent({
-  name: 'Settings',
+  name: 'StyleGuide',
   components: { BaseText, BaseButton },
   setup() {
     const buttons = [

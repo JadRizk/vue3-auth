@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from 'views/Home.vue'
 import Auth from 'views/Auth.vue'
-import Settings from 'views/Settings.vue'
+import StyleGuide from 'views/StyleGuide.vue'
 
 import { store } from 'store'
 
@@ -23,9 +23,9 @@ export const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: '/settings',
-    name: 'Settings',
-    component: Settings,
+    path: '/styleguide',
+    name: 'StyleGuide',
+    component: StyleGuide,
     meta: {
       auth: false,
     },
@@ -42,7 +42,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.name === 'Settings') {
+  if (to.name === 'StyleGuide') {
     next()
   } else {
     if (to.meta.auth) {
