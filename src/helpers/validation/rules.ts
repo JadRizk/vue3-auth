@@ -1,5 +1,8 @@
 import { required, minLength, email, helpers } from '@vuelidate/validators'
 
+const userPasswordMin = 8
+const userNameMin = 4
+
 const rules = {
   userEmail: {
     email: helpers.withMessage(`Please enter a valid email address`, email),
@@ -7,15 +10,15 @@ const rules = {
   },
   userPassword: {
     minLength: helpers.withMessage(
-      (v: any) => `Please enter at least ${v.$params.min} characters`,
-      minLength(8),
+      `Please enter at least ${userPasswordMin} characters`,
+      minLength(userPasswordMin),
     ),
     required,
   },
   userName: {
     minLength: helpers.withMessage(
-      (v: any) => `Please enter at least ${v.$params.min} characters`,
-      minLength(4),
+      `Please enter at least ${userNameMin} characters`,
+      minLength(userNameMin),
     ),
     required,
   },
