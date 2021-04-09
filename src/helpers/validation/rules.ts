@@ -2,7 +2,7 @@ import { required, minLength, email, helpers } from '@vuelidate/validators'
 
 const rules = {
   userEmail: {
-    email: helpers.withMessage((v: any) => `Please enter a valid email`, email),
+    email: helpers.withMessage(`Please enter a valid email address`, email),
     required,
   },
   userPassword: {
