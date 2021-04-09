@@ -1,5 +1,6 @@
 <template>
   <div class="container" :class="containerClassName">
+    <router-link to="/settings">Settings</router-link>
     <div class="forms-container">
       <div class="signin-signup">
         <register-form @on-register-submit="handleOnRegister" />
