@@ -1,7 +1,7 @@
 <template>
   <form class="sign-in-form" novalidate @submit.prevent="handleOnSubmit">
     <base-text class="title" tag="h2" content="Sign In" />
-    <input-field
+    <base-input
       id="name"
       name="username"
       iconName="user"
@@ -14,7 +14,7 @@
       @on-blur="handleBlur('userEmail')"
     />
 
-    <input-field
+    <base-input
       id="password"
       name="password"
       iconName="lock"
@@ -50,13 +50,13 @@
 import { SetupContext } from 'vue'
 
 import { BaseButton, BaseText } from 'components/atoms'
-import { InputField } from 'components/molecules'
+import { BaseInput } from 'components/atoms'
 
 import { useLoginForm } from 'composables/useLoginForm'
 
 export default {
   name: 'LoginForm',
-  components: { BaseButton, InputField, BaseText },
+  components: { BaseButton, BaseInput, BaseText },
   setup(props: {}, { emit }: SetupContext) {
     const { userEmail, userPassword, v, handleBlur } = useLoginForm()
 

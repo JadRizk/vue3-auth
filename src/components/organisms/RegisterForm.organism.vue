@@ -1,7 +1,7 @@
 <template>
   <form class="sign-up-form" novalidate @submit.prevent="handleOnSubmit">
     <base-text tag="h2" content="Register with us" class="title" />
-    <input-field
+    <base-input
       id="register-email"
       name="email"
       label="Email Address"
@@ -12,7 +12,7 @@
       :validationStatus="v.userEmail"
       @on-blur="handleBlur('userEmail')"
     />
-    <input-field
+    <base-input
       id="register-username"
       name="username"
       iconName="user"
@@ -23,7 +23,7 @@
       :validationStatus="v.userName"
       @on-blur="handleBlur('userName')"
     />
-    <input-field
+    <base-input
       id="register-password"
       name="password"
       iconName="lock"
@@ -62,7 +62,7 @@ import { RegisterUserInfo } from 'store/auth.module'
 
 /* eslint-disable @typescript-eslint/camelcase */
 import { BaseButton, BaseText } from 'components/atoms'
-import { InputField } from 'components/molecules'
+import { BaseInput } from 'components/atoms'
 import { useRegisterForm } from 'composables/useRegisterForm'
 import { useEmitter } from 'hooks/useEmitter'
 
@@ -72,7 +72,7 @@ interface Events {
 
 export default {
   name: 'RegisterForm',
-  components: { BaseButton, BaseText, InputField },
+  components: { BaseButton, BaseText, BaseInput },
   setup() {
     // Import everything we need from the registration composable
     const {
