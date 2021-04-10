@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <router-view />
-    <Spinner />
-  </div>
+  <router-view />
+  <Spinner />
 </template>
 
 <script lang="ts">
