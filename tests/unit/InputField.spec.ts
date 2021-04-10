@@ -21,7 +21,7 @@ describe('TextField', () => {
 
   it('emits on-blur when on blur', async () => {
     const wrapper = shallowMount(InputField, {
-      props: { id, name },
+      props: { id, name, label, iconName, modelValue },
     })
 
     wrapper.find('input').trigger('blur')
