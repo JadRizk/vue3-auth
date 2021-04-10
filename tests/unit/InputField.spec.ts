@@ -3,11 +3,14 @@ import { InputField } from 'components/molecules'
 
 describe('TextField', () => {
   const id = 'greatestId'
-  const name = 'GhenghisKhan'
+  const name = 'GenghisKhan'
+  const label = 'TextField-Label'
+  const iconName = 'IconName'
+  const modelValue = 'modelValue'
 
   it('should emit a value', async () => {
     const wrapper = shallowMount(InputField, {
-      props: { id, name },
+      props: { id, name, label, iconName, modelValue },
     })
     wrapper.vm.$emit('update:modelValue', '123')
     await wrapper.vm.$nextTick()
