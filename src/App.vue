@@ -1,10 +1,15 @@
 <template>
-  <router-view />
+  <div>
+    <router-view />
+    <Spinner />
+  </div>
 </template>
 
 <script lang="ts">
+import { Spinner } from 'components/atoms'
+
 export default {
-  components: {},
+  components: { Spinner },
 }
 </script>
 <style>
