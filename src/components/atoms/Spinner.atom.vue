@@ -6,7 +6,9 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { Spinner } from 'composables/Spinner'
+/* import { Spinner } from 'composables/Spinner' */
+/* Only importing this so the test will work for the time being */
+import { Spinner } from '@/composables/Spinner'
 
 export default defineComponent({
   setup() {
