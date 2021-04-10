@@ -23,6 +23,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { BaseInput, BaseIcon } from 'components/atoms'
+
 export default defineComponent({
   name: 'InputField',
   components: { BaseInput, BaseIcon },

@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils'
-import TextField from '@/components/atoms/TextField.atom.vue'
+import { InputField } from 'components/molecules'
 
 describe('TextField', () => {
   const id = 'greatestId'
   const name = 'GhenghisKhan'
 
   it('should emit a value', async () => {
-    const wrapper = shallowMount(TextField, {
+    const wrapper = shallowMount(InputField, {
       props: { id, name },
     })
     wrapper.vm.$emit('update:modelValue', '123')
@@ -17,7 +17,7 @@ describe('TextField', () => {
   })
 
   it('emits on-blur when on blur', async () => {
-    const wrapper = shallowMount(TextField, {
+    const wrapper = shallowMount(InputField, {
       props: { id, name },
     })
 
