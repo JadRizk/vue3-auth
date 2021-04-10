@@ -49,14 +49,14 @@ export function addAuthHeader(token: string) {
  * @example loginService('example`@gmail.com', '1234password')
  */
 export async function loginService(
-  username: string,
+  email: string,
   password: string,
 ): Promise<AxiosResponse<LoginAPIResponse>> {
   const config: AxiosRequestConfig = {
     method: 'POST',
     url: '/player',
     data: {
-      userName: username,
+      email,
       password,
     },
   }
@@ -65,7 +65,7 @@ export async function loginService(
 }
 
 /**
- * @description Registration aPI
+ * @description Registration API
  * @params {User} - new user object
  *
  * @returns {Promise<AxiosResponse<RegisterAPISuccess>>} - user object

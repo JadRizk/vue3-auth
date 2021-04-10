@@ -9,8 +9,6 @@
       placeholder="username"
       v-model="userEmail"
       :validationStatus="v.userEmail"
-      isRequired
-      showRequiredWarning
       @on-blur="handleBlur('userEmail')"
     />
 
@@ -26,7 +24,6 @@
       isRequired
       @on-blur="handleBlur('userPassword')"
     />
-
     <base-button type="primary-contained">Login</base-button>
     <p class="social-text">Or Sign in with social platforms</p>
     <div class="social-media">
@@ -65,7 +62,7 @@ export default {
 
       if (!v.value.userEmail.$error && !v.value.userPassword.$error) {
         emit('on-login-submit', {
-          username: userEmail.value,
+          email: userEmail.value,
           password: userPassword.value,
         })
         return
