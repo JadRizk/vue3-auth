@@ -2,18 +2,16 @@
   <form class="sign-in-form" novalidate @submit.prevent="handleOnSubmit">
     <base-text class="title" tag="h2" content="Sign In" />
     <input-field
-      id="name"
-      name="username"
-      iconName="user"
-      label="Insert your name"
-      placeholder="username"
+      id="register-email"
+      name="email"
+      label="Email Address"
+      iconName="envelope"
+      placeholder="johndoe@stix.com"
+      isRequired
       v-model="userEmail"
       :validationStatus="v.userEmail"
-      isRequired
-      showRequiredWarning
       @on-blur="handleBlur('userEmail')"
     />
-
     <input-field
       id="password"
       name="password"
@@ -26,7 +24,6 @@
       isRequired
       @on-blur="handleBlur('userPassword')"
     />
-
     <base-button type="primary-contained">Login</base-button>
     <p class="social-text">Or Sign in with social platforms</p>
     <div class="social-media">
@@ -65,7 +62,7 @@ export default {
 
       if (!v.value.userEmail.$error && !v.value.userPassword.$error) {
         emit('on-login-submit', {
-          username: userEmail.value,
+          email: userEmail.value,
           password: userPassword.value,
         })
         return
