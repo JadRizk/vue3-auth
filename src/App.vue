@@ -1,13 +1,19 @@
 <template>
-  <router-view />
-  <Spinner />
+  <Suspense>
+    <template #default>
+      <router-view />
+    </template>
+    <template #fallback>
+      <base-loader />
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">
-import { Spinner } from 'components/atoms'
+import { BaseLoader } from 'components/atoms'
 
 export default {
-  components: { Spinner },
+  components: { BaseLoader },
 }
 </script>
 <style>

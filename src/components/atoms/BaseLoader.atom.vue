@@ -1,20 +1,14 @@
 <template>
-  <div class="spinner" v-if="showSpinner">
+  <div class="spinner">
     <div class="lds-hourglass"></div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-/* import { Spinner } from 'composables/Spinner' */
-/* Only importing this so the test will work for the time being */
-import { Spinner } from '@/composables/Spinner'
 
 export default defineComponent({
-  setup() {
-    const { showSpinner } = Spinner()
-    return { showSpinner }
-  },
+  name: 'BaseLoader',
 })
 </script>
 
@@ -25,7 +19,7 @@ export default defineComponent({
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0);
   z-index: 10;
 }
 
