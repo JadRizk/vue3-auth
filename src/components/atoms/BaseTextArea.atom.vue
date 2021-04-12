@@ -30,7 +30,7 @@ interface Props {
 }
 
 export default defineComponent({
-  name: 'BaseTextInput',
+  name: 'BaseTextArea',
   props: {
     id: {
       type: String,
