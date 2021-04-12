@@ -2,7 +2,7 @@
   <form class="sign-in-form" novalidate @submit.prevent="handleOnSubmit">
     <base-text class="title" tag="h2" content="Sign In" />
     <input-field
-      id="register-email"
+      id="email"
       name="email"
       label="Email Address"
       iconName="envelope"
