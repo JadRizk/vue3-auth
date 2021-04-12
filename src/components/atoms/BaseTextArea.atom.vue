@@ -18,7 +18,7 @@
 import { defineComponent, SetupContext } from 'vue'
 
 interface Props {
-  id: string
+  id?: string
   name: string
   cols?: string
   rows?: string
