@@ -1,10 +1,19 @@
 <template>
-  <router-view />
+  <Suspense>
+    <template #default>
+      <router-view />
+    </template>
+    <template #fallback>
+      <base-loader />
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">
+import { BaseLoader } from 'components/atoms'
+
 export default {
-  components: {},
+  components: { BaseLoader },
 }
 </script>
 <style>
