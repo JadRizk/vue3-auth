@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import { computed, SetupContext } from 'vue'
-
 interface Props {
   id: string
   name: string
@@ -56,14 +55,12 @@ export default {
     const handleOnBlur = () => {
       emit('on-blur')
     }
-
     const inputWrapperClass = computed(() => {
       return {
         'border-red-500': props.errorMode,
         'custom-checkbox': props.type === 'checkbox',
       }
     })
-
     return {
       handleOnBlur,
       inputWrapperClass,

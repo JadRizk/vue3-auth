@@ -4,14 +4,14 @@
     <input-field
       id="email"
       name="email"
-      label="Email Address"
       iconName="envelope"
+      label="Enter your Email"
       placeholder="johndoe@stix.com"
-      isRequired
       v-model="userEmail"
       :validationStatus="v.userEmail"
       @on-blur="handleBlur('userEmail')"
     />
+
     <input-field
       id="password"
       name="password"
@@ -45,10 +45,8 @@
 
 <script lang="ts">
 import { SetupContext } from 'vue'
-
 import { BaseButton, BaseText } from 'components/atoms'
 import { InputField } from 'components/molecules'
-
 import { useLoginForm } from 'composables/useLoginForm'
 
 export default {

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from 'views/Home.vue'
 import Auth from 'views/Auth.vue'
+import StyleGuide from 'views/StyleGuide.vue'
 
 import { store } from 'store'
 
@@ -22,6 +23,14 @@ export const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: '/styleguide',
+    name: 'StyleGuide',
+    component: StyleGuide,
+    meta: {
+      auth: false,
+    },
+  },
+  {
     path: '/:catchAll(.*)',
     redirect: '/',
   },
@@ -33,18 +42,19 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.auth) {
-    if (store.getters.isUserLoggedIn) next()
-
-    next({ name: 'Auth' })
-  }
-
-  if (!to.meta.auth) {
-    if (store.getters.isUserLoggedIn) next({ name: 'Home' })
-
-    if (to.name !== 'Auth') next({ name: 'Auth' })
-
+  if (to.name === 'StyleGuide') {
     next()
+  } else {
+    if (to.meta.auth) {
+      if (store.getters.isUserLoggedIn) next()
+      next({ name: 'Auth' })
+    }
+
+    if (!to.meta.auth) {
+      if (store.getters.isUserLoggedIn) next({ name: 'Home' })
+      if (to.name !== 'Auth') next({ name: 'Auth' })
+      next()
+    }
   }
 })
 

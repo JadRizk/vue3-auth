@@ -1,13 +1,16 @@
 import { shallowMount } from '@vue/test-utils'
-import BaseInput from '@/components/atoms/BaseInput.atom.vue'
+import { InputField } from 'components/molecules'
 
-describe('BaseInput', () => {
+describe('TextField', () => {
   const id = 'greatestId'
-  const name = 'GhenghisKhan'
+  const name = 'GenghisKhan'
+  const label = 'TextField-Label'
+  const iconName = 'IconName'
+  const modelValue = 'modelValue'
 
   it('should emit a value', async () => {
-    const wrapper = shallowMount(BaseInput, {
-      props: { id, name },
+    const wrapper = shallowMount(InputField, {
+      props: { id, name, label, iconName, modelValue },
     })
     wrapper.vm.$emit('update:modelValue', '123')
     await wrapper.vm.$nextTick()
@@ -17,8 +20,8 @@ describe('BaseInput', () => {
   })
 
   it('emits on-blur when on blur', async () => {
-    const wrapper = shallowMount(BaseInput, {
-      props: { id, name },
+    const wrapper = shallowMount(InputField, {
+      props: { id, name, label, iconName, modelValue },
     })
 
     wrapper.find('input').trigger('blur')

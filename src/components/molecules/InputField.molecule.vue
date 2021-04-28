@@ -22,7 +22,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
 import { BaseInput, BaseIcon } from 'components/atoms'
 
 export default defineComponent({
@@ -72,7 +71,6 @@ export default defineComponent({
   },
   setup(props, { emit }) {
     const handleOnBlur = () => emit('on-blur')
-
     return {
       handleOnBlur,
       emit,
@@ -99,7 +97,6 @@ export default defineComponent({
   @apply border-2;
   @apply border-dark-900;
 }
-
 .input-field input {
   background: none;
   outline: none;
@@ -109,12 +106,10 @@ export default defineComponent({
   font-size: 1.1rem;
   color: #333;
 }
-
 .input-field input::placeholder {
   color: #aaa;
   font-weight: 500;
 }
-
 .pre-input-icon {
   text-align: center;
   line-height: 55px;

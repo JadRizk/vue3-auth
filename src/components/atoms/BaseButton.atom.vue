@@ -3,6 +3,7 @@
     @click="onClick"
     :type="type"
     :class="`btn-${size} btn-${variantColor}`"
+    :disabled="isDisabled"
   >
     <slot>Default Button</slot>
   </button>
