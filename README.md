@@ -4,8 +4,6 @@
   <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
 </a>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8d2843e8-6c67-48a6-b3f1-247bb9b1a0dd/deploy-status)](https://app.netlify.com/sites/objective-clarke-6e0a9d/deploys)
-
 A simple implentation of a JWT authentication flow. Using Vue3, Vuex4, Typescript, Tailwindcss, and atomic design pattern.
 This project can be used as boilerplate to any project you wish to build.
 
